@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "FO2a97t8aj3j4IpJkzajHhQq8/KyeaCr2NMvH+tUuqDLAm+bmb+Z49gAQNe2Upn82QtKcNRtLTDBZRzSQMKT6w==",
+  "success": true,
+  "projectFilePath": "C:\\Tool_Warehouse_Management_System\\Tool_Warehouse_Management_System\\Tool_Warehouse_Management_System\\Tool_Warehouse_Management_System\\Tool_Warehouse_Management_System.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
