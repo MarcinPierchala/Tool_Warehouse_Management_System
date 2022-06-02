@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 
 namespace Tool_Warehouse_Management_System.DataAccess.Entities
 {
-    public class Tool :EntityBase
+    public class ToolCategory : EntityBase
     {
-        public int ToolCategoryId { get; set; }
-
-        public ToolCategory ToolCategory { get; set; }
-
         [Required]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public string Category { get; set; }
 
-        public int YearProduction { get; set; }
+        public List<Tool> Tools { get; set; }
     }
 }
