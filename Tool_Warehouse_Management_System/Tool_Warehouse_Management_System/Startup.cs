@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,6 +29,7 @@ namespace Tool_Warehouse_Management_System
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddDbContext<ToolWarehouseStorageContext>(opt => opt.UseSqlServer(this.Configuration.GetConnectionString("ToolWarehouseDatabaseConnection")));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
