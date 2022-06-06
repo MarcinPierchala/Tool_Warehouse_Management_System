@@ -15,6 +15,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using T_W_M_S.ApplicationServices.API.Domain;
 using Tool_Warehouse_Management_System.DataAccess;
+using T_W_M_S.ApplicationServices.Mappings;
 
 namespace Tool_Warehouse_Management_System
 {
@@ -30,12 +31,16 @@ namespace Tool_Warehouse_Management_System
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(ToolsProfile).Assembly);
+
             services.AddMediatR(typeof(ResponseBase<>));
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
             services.AddDbContext<ToolWarehouseStorageContext>(opt => opt.UseSqlServer(this.Configuration.GetConnectionString("ToolWarehouseDatabaseConnection")));
 
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Tool_Warehouse_Management_System", Version = "v1" });
