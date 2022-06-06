@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
       <PrivateAssets>all</PrivateAssets>
@@ -20,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tool_Warehouse_Management_System.DataAccess\Tool_Warehouse_Management_System.DataAccess.csproj" />
+    <ProjectReference Include="..\T_W_M_S.ApplicationServices\T_W_M_S.ApplicationServices.csproj" />
   </ItemGroup>
 
 </Project>
