@@ -16,5 +16,8 @@ namespace Tool_Warehouse_Management_System.DataAccess
         }
 
         public DbSet<Tool> Tools { get; set; }
+
+        public DbSet<ToolCategory> ToolCategories { get; set; }
+
     }
 }
