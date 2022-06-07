@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Tool_Warehouse_Management_System.DataAccess\Tool_Warehouse_Management_System.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="T_W_M_S\ApplicationServices\API\Domain\" />
+  </ItemGroup>
+
 </Project>

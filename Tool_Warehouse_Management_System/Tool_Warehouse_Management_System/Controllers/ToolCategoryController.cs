@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Tool_Warehouse_Management_System.DataAccess;
-using Tool_Warehouse_Management_System.DataAccess.Entities;
+using T_W_M_S.ApplicationServices.API.Domain;
 
 namespace Tool_Warehouse_Management_System.Controllers
 {
@@ -13,18 +9,21 @@ namespace Tool_Warehouse_Management_System.Controllers
     [Route("[controller]")]
     public class ToolCategoryController : ControllerBase
     {
-        private readonly IRepository<ToolCategory> toolCategoryRepository;
-        public ToolCategoryController(IRepository<ToolCategory> toolCategoryRepository)
+        private readonly IMediator mediator;
+
+        public ToolCategoryController(IMediator mediator)
         {
-            this.toolCategoryRepository = toolCategoryRepository;
+            this.mediator = mediator;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("")]
-        public async Task<IEnumerable<ToolCategory>> GetAllToolsAsync() => await this.toolCategoryRepository.GetAll();
 
-        [HttpGet]
-        [Route("{toolCategoryId}")]
-        public async Task<ToolCategory> GetToolCategoryByIdAsync(int toolCategoryId) => await this.toolCategoryRepository.GetById(toolCategoryId);
+        public async Task<IActionResult> AddToolCategory([FromBody] AddToolCategoryRequest request)
+        {
+            var response = await this.mediator.Send(request);
+            return this.Ok(response);
+        }
+       
     }
 }
