@@ -24,16 +24,16 @@ namespace T_W_M_S.ApplicationServices.API.Handlers
             this.mapper = mapper;
         }
 
-        public Task<GetToolsResponse> Handle(GetToolsRequest request, CancellationToken cancellationToken)
+        public async Task<GetToolsResponse> Handle(GetToolsRequest request, CancellationToken cancellationToken)
         {
-            var tools = this.toolRepository.GetAll();
+            var tools = await this.toolRepository.GetAll();
             var mappedTools = this.mapper.Map<List<Domain.Models.Tool>>(tools);
             var responce = new GetToolsResponse()
             {
                 Data = mappedTools
             };
 
-            return Task.FromResult(responce);
+            return responce;
         }
     }
 }

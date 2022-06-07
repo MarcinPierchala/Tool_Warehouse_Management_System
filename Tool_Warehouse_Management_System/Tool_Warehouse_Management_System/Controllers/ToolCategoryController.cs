@@ -21,10 +21,10 @@ namespace Tool_Warehouse_Management_System.Controllers
 
         [HttpGet]
         [Route("")]
-        public IEnumerable<ToolCategory> GetAllTools() => this.toolCategoryRepository.GetAll();
+        public async Task<IEnumerable<ToolCategory>> GetAllToolsAsync() => await this.toolCategoryRepository.GetAll();
 
         [HttpGet]
         [Route("{toolCategoryId}")]
-        public ToolCategory GetToolCategoryById(int toolCategoryId) => this.toolCategoryRepository.GetById(toolCategoryId);
+        public async Task<ToolCategory> GetToolCategoryByIdAsync(int toolCategoryId) => await this.toolCategoryRepository.GetById(toolCategoryId);
     }
 }
