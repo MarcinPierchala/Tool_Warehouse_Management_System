@@ -27,7 +27,10 @@ namespace T_W_M_S.ApplicationServices.API.Handlers
 
         public async Task<GetToolsResponse> Handle(GetToolsRequest request, CancellationToken cancellationToken)
         {
-            var query = new GetToolsQuery();
+            var query = new GetToolsQuery()
+            {
+                Name = request.Name
+            };
             var tools = await this.queryExecutor.Execute(query);
             var mappedTools = this.mapper.Map<List<Domain.Models.Tool>>(tools);
             var responce = new GetToolsResponse()

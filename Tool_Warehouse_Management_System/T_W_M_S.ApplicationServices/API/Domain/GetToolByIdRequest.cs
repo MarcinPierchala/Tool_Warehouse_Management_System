@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace T_W_M_S.ApplicationServices.API.Domain
 {
-    public class GetToolsRequest : IRequest<GetToolsResponse>
+    public class GetToolByIdRequest : IRequest<GetToolByIdResponse>
     {
-        public string Name { get; set; }
-
+        public int ToolId { get; set; }
     }
 }

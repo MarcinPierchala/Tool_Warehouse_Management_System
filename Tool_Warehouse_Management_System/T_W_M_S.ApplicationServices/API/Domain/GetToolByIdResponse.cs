@@ -1,15 +1,13 @@
-﻿using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using T_W_M_S.ApplicationServices.API.Domain.Models;
 
 namespace T_W_M_S.ApplicationServices.API.Domain
 {
-    public class GetToolsRequest : IRequest<GetToolsResponse>
+    public class GetToolByIdResponse : ResponseBase<Tool>
     {
-        public string Name { get; set; }
-
     }
 }

@@ -29,5 +29,17 @@ namespace Tool_Warehouse_Management_System.Controllers
             var response = await this.mediator.Send(request);
             return this.Ok(response);
         }
+
+        [HttpGet]
+        [Route("toolId")]
+        public async Task<IActionResult> GetById([FromRoute] int toolId)
+        {
+            var request = new GetToolByIdRequest()
+            {
+                ToolId = toolId
+            };
+            var response = await this.mediator.Send(request);
+            return this.Ok(response);
+        }
     }
 }
