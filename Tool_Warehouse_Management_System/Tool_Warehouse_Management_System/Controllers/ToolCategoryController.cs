@@ -24,6 +24,15 @@ namespace Tool_Warehouse_Management_System.Controllers
             var response = await this.mediator.Send(request);
             return this.Ok(response);
         }
-       
+
+        [HttpPost]
+        [Route("DELETING_CATEGORIES")]
+
+        public async Task<IActionResult> DelToolCategory([FromBody] DelToolCategoryRequest request)
+        {
+            var response = await this.mediator.Send(request);
+            return this.Ok(response);
+        }
+
     }
 }
