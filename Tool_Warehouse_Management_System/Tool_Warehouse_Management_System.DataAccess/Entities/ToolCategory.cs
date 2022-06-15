@@ -13,7 +13,7 @@ namespace Tool_Warehouse_Management_System.DataAccess.Entities
         [MaxLength(100)]
         public string Category { get; set; }
 
-        public List<Tool> Tools { get; set; }
+        //public List<Tool> Tools { get; set; }
 
         
     }

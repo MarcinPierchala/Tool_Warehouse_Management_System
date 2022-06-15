@@ -8,6 +8,7 @@ namespace T_W_M_S.ApplicationServices.API.Domain.Models
 {
     public class Tool
     {
+        public int ToolCategoryId { get; set; }
         public int Id { get; set; }
         
         public string Name { get; set; }

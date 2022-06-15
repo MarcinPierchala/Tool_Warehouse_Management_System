@@ -11,5 +11,7 @@ namespace T_W_M_S.ApplicationServices.API.Domain.Models
         public int Id { get; set; }
 
         public string Category { get; set; }
+
+        //public List<Tool> Tools { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace Tool_Warehouse_Management_System.DataAccess.CQRS.Queries
 
         public override  Task<List<Tool>> Execute(ToolWarehouseStorageContext context)
         {
-            return context.Tools.Where(x => x.Name == this.Name).ToListAsync();
+            return context.Tools.ToListAsync();
         }
     }
 }

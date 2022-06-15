@@ -20,9 +20,9 @@ namespace T_W_M_S.ApplicationServices.Mappings
                 .ForMember(x => x.Id, y => y.MapFrom(z => z.Id))
                 .ForMember(x => x.Category, y => y.MapFrom(z => z.Category));
 
-            this.CreateMap< DelToolCategoryRequest, Tool_Warehouse_Management_System.DataAccess.Entities.ToolCategory>()
-                .ForMember(x => x.Id, y => y.MapFrom(z => z.Id))
-                .ForMember(x => x.Category, y => y.MapFrom(z => z.Category));
+            this.CreateMap<DelToolCategoryRequest, Tool_Warehouse_Management_System.DataAccess.Entities.ToolCategory>()
+                .ForMember(x => x.Id, y => y.MapFrom(z => z.Id));
+
         }
     }
 }

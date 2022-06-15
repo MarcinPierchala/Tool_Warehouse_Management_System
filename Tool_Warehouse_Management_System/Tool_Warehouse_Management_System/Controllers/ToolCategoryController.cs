@@ -25,6 +25,14 @@ namespace Tool_Warehouse_Management_System.Controllers
             return this.Ok(response);
         }
 
+        [HttpGet]
+        [Route("")]
+        public async Task<IActionResult> GetAllToolsCategories([FromQuery] GetToolsCategoriesRequest request)
+        {
+            var response = await this.mediator.Send(request);
+            return this.Ok(response);
+        }
+
         [HttpDelete]
         [Route("{id}")]
 
