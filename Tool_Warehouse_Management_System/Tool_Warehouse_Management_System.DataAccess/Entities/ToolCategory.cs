@@ -14,5 +14,7 @@ namespace Tool_Warehouse_Management_System.DataAccess.Entities
         public string Category { get; set; }
 
         public List<Tool> Tools { get; set; }
+
+        
     }
 }

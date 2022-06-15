@@ -8,14 +8,15 @@ using Tool_Warehouse_Management_System.DataAccess.Entities;
 
 namespace Tool_Warehouse_Management_System.DataAccess.CQRS.Commands
 {
-    public class DelToolCategoryCommand : CommandBase<Entities.ToolCategory, Entities.ToolCategory>
+    public class DelToolCategoryCommand : CommandBase<Entities.ToolCategory, bool>
     {
         //public string Category { get; set; }
-        public override async Task<ToolCategory> Execute(ToolWarehouseStorageContext context)
-        {            
+        public override async Task<bool> Execute(ToolWarehouseStorageContext context)
+        {
+            context.ChangeTracker.Clear();
             context.ToolCategories.Remove(this.Parameter);  
             await context.SaveChangesAsync();   //zapisuje zmiany
-            return this.Parameter;  //zwrotka juz z bazy danych pełnego wpisu (z id itd)
+            return true;  //zwrotka juz z bazy danych pełnego wpisu (z id itd)
         }
     }
 }

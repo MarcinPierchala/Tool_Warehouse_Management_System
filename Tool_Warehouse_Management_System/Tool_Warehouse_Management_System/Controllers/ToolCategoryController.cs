@@ -25,13 +25,16 @@ namespace Tool_Warehouse_Management_System.Controllers
             return this.Ok(response);
         }
 
-        [HttpPost]
-        [Route("DELETING_CATEGORIES")]
+        [HttpDelete]
+        [Route("{id}")]
 
-        public async Task<IActionResult> DelToolCategory([FromBody] DelToolCategoryRequest request)
+        public async Task<IActionResult> DelToolCategory([FromRoute] int id)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            var request = new DelToolCategoryRequest()
+                {
+                    Id = id
+                };
+            return this.Ok(request);
         }
 
     }

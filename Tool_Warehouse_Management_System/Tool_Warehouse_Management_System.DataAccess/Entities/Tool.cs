@@ -11,8 +11,6 @@ namespace Tool_Warehouse_Management_System.DataAccess.Entities
     {
         public int ToolCategoryId { get; set; }
 
-        public ToolCategory ToolCategory { get; set; }
-
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }

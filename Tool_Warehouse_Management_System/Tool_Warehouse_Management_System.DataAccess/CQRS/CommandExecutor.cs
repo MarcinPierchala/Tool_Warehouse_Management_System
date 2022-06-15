@@ -16,7 +16,7 @@ namespace Tool_Warehouse_Management_System.DataAccess.CQRS
             this.context = context;
         }
 
-        public Task<TResult> Execute<TParameters, TResult>(CommandBase<TParameters, TResult> command)
+        public Task<TResult> Execute<TParameter, TResult>(CommandBase<TParameter, TResult> command)
         {
             return command.Execute(this.context);
         }
