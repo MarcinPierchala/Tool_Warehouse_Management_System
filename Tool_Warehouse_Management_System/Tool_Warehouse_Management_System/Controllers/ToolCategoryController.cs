@@ -38,11 +38,14 @@ namespace Tool_Warehouse_Management_System.Controllers
 
         public async Task<IActionResult> DelToolCategory([FromRoute] int id)
         {
+            
             var request = new DelToolCategoryRequest()
                 {
                     Id = id
                 };
-            return this.Ok(request);
+            var response = await this.mediator.Send(request);
+
+            return this.Ok(response);
         }
 
     }

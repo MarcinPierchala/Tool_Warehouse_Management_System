@@ -28,14 +28,14 @@ namespace T_W_M_S.ApplicationServices.API.Handlers
 
         public async Task<DelToolCategoryResponse> Handle(DelToolCategoryRequest request, CancellationToken cancellationToken)
         {
-            var query = new GetToolsCategoriesQuery()
-            {
-                Id = request.Id
-            };
+            //var query = new GetToolsCategoriesQuery()
+            //{
+            //    Id = request.Id
+            //};
 
             //var categories = await this.queryExecutor.Execute(query);
 
-            //if(categories == null)
+            //if (categories == null)
             //{
             //    return new DelToolCategoryResponse();
             //    {
