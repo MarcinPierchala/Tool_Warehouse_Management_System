@@ -33,6 +33,15 @@ namespace Tool_Warehouse_Management_System.Controllers
             return this.Ok(response);
         }
 
+        [HttpPut]
+        [Route("{id}")]
+
+        public async Task<IActionResult> UpdateToolCategory([FromRoute] int id, [FromBody] UpdateToolCategoryRequest request)
+        {
+            request.Id = id;
+            return (IActionResult)await this.mediator.Send(request);//, UpdateToolCategoryResponse(request);
+        }
+
         [HttpDelete]
         [Route("{id}")]
 
