@@ -11,7 +11,7 @@ namespace Tool_Warehouse_Management_System.DataAccess.CQRS.Commands
     {
         public override async Task<ToolCategory> Execute(ToolWarehouseStorageContext context)
         {
-            await context.ToolCategories.AddAsync(this.Parameter);  //dodaje nowy wpis - kategorię narzędzi
+            context.ToolCategories.Update(this.Parameter);     //AddAsync(this.Parameter);  //dodaje nowy wpis - kategorię narzędzi
             await context.SaveChangesAsync();   //zapisuje zmiany
             return this.Parameter;  //zwrotka juz z bazy danych pełnego wpisu (z id itd)
         }

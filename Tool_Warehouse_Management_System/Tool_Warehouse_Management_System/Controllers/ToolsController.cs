@@ -31,12 +31,12 @@ namespace Tool_Warehouse_Management_System.Controllers
         }
 
         [HttpGet]
-        [Route("toolId")]
-        public async Task<IActionResult> GetById([FromRoute] int toolId)
+        [Route("{tool_Id}")]
+        public async Task<IActionResult> GetById([FromRoute] int tool_Id)
         {
             var request = new GetToolByIdRequest()
             {
-                ToolId = toolId
+                Id = tool_Id
             };
             var response = await this.mediator.Send(request);
             return this.Ok(response);

@@ -40,7 +40,10 @@ namespace Tool_Warehouse_Management_System.Controllers
         {
             request.Id = id;
             return (IActionResult)await this.mediator.Send(request);//, UpdateToolCategoryResponse(request);
+            //return this.Ok(request);
+
         }
+
 
         [HttpDelete]
         [Route("{id}")]

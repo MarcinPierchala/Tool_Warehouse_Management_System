@@ -27,7 +27,7 @@ namespace T_W_M_S.ApplicationServices.API.Handlers
         {
             var query = new GetToolQuery()
             {
-                Id = request.ToolId
+                Id = request.Id
             };
             var tool = await this.queryExecutor.Execute(query);
             var mappedTool = this.mapper.Map<Domain.Models.Tool>(tool);
